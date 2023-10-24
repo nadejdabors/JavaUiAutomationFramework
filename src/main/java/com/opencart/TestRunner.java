@@ -41,16 +41,14 @@ public class TestRunner {
         emailInput.sendKeys(randomEmail);
         System.out.println(randomEmail);
 
-        //WebElement phoneInput = driver.findElement(By.cssSelector("#input-telephone"));
-        //phoneInput.sendKeys("060344520");
+
 
         WebElement passwordInput = driver.findElement(By.cssSelector("#input-password"));
         String password = RandomDataManager.generatePassword();
         passwordInput.sendKeys(password);
         System.out.println(password);
 
-        //WebElement confirmPasswordInput = driver.findElement(By.cssSelector("#input-confirm"));
-        //confirmPasswordInput.sendKeys("Parola123!");
+
 
         WebElement  termsAndConditionToggleBar = driver.findElement(By.cssSelector("input[value='1'][name='agree']"));
         JavascriptExecutor je = (JavascriptExecutor) driver;
