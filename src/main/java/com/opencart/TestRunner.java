@@ -16,7 +16,6 @@ public class TestRunner {
 
         driver.switchTo().newWindow(WindowType.TAB);
         driver.get("https://andreisecuqa.host/");
-      //  Thread.sleep(1000);
 
         WebElement myAccountIcon = driver.findElement(By.xpath("//i[@class='fa-solid fa-user']"));
         myAccountIcon.click();
@@ -37,7 +36,7 @@ public class TestRunner {
         System.out.println(lastName);;
 
         WebElement emailInput = driver.findElement(By.cssSelector("#input-email"));
-        emailInput.sendKeys("boss007@gmail.com");String randomEmail = RandomDataManager.generateRandomEmail();
+        String randomEmail = RandomDataManager.generateRandomEmail();
         emailInput.sendKeys(randomEmail);
         System.out.println(randomEmail);
 
