@@ -55,17 +55,6 @@ public class TestRegistrationFlowWithJunit {
         Assertions.assertTrue(currentUrl.contains("route=account/success"),"Does not contain");
 
 
-//        System.out.println(driver.getTitle());
-//
-//        homePage.navigateToLogOutFromAccount();
-//        homePage.navigateToLoginFromHeader();
-//
-//
-//        loginPage.fillInTheLoginForm(randomEmail,password);
-//        loginPage.clickLoginBtn();
-//
-//        homePage.navigateToLogOutFromAccount();
-
 
     }
    @Test
@@ -89,20 +78,6 @@ public class TestRegistrationFlowWithJunit {
 
         Assertions.assertEquals(expectedUrl,actualUrl,"The urls should be equals");
 
-
-
-//        String title = driver.getTitle();
-//        System.out.println(title);
-//
-//
-//        homePage.navigateToLogOutFromAccount();
-//        homePage.navigateToLoginFromHeader();
-//
-//        loginPage.fillInTheLoginForm(randomEmail,password);
-//        loginPage.clickLoginBtn();
-//
-//        homePage.navigateToLogOutFromAccount();
-//
 
 
     }
