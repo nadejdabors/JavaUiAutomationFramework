@@ -1,6 +1,5 @@
 package com.opencart.managers;
 
-import com.opencart.managers.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -9,17 +8,17 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class DriverManager {
-
-    private static String webDriverType = "Chrome";
+    private static String webDriverType = "ChrOme";
     private static DriverManager instance;
     private WebDriver driver;
 
-    private DriverManager(){
-        switch (webDriverType.toUpperCase()){
+    private DriverManager() {
+        switch (webDriverType.toUpperCase()) {
             case "CHROME":
-                ChromeOptions options = new ChromeOptions();
+                ChromeOptions options =  new ChromeOptions();
                 options.addArguments("ignore-certificate-errors");
                 options.addArguments("--start-maximized");
+                options.addArguments("--incognito");
                 driver = new ChromeDriver(options);
                 System.out.println("The Chrome Driver is initiated");
                 break;
@@ -29,37 +28,34 @@ public class DriverManager {
                 break;
             case "EDGE":
                 driver = new EdgeDriver();
-                System.out.println("The Edge  Driver is initiated");
+                System.out.println("The Edge Driver is initiated");
                 break;
             case "SAFARI":
                 driver = new SafariDriver();
-                System.out.println("The Safari  Driver is initiated");
+                System.out.println("The Safari Driver is initiated");
                 break;
             default:
-
-
+                System.out.println("There is not such a browser type " + webDriverType);
         }
     }
-public static DriverManager getInstance(){
-        if (instance == null){
-            return new DriverManager();
+
+    public static DriverManager getInstance(){
+        if(instance == null){
+            instance = new DriverManager();
         }
         return instance;
-}
+    }
 
-public WebDriver getDriver(){
-        if(driver == null)
-         getInstance();
-
+    public WebDriver getDriver(){
         return driver;
-}
+    }
 
-public void quiteTheDriver(){
+    public void quiteTheDriver(){
         driver.close();
         driver.quit();
         driver = null;
-        instance = null;
-    System.out.println("The Browser is closed and the session is set to null");
-}
+        instance=null;
+    }
+
 
 }

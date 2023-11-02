@@ -1,4 +1,4 @@
-package com.opencart.stepdefinitions;
+package com.opencart;
 
 
 
